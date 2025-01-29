@@ -1,3 +1,7 @@
+#MPIN DETECTION : WEAK OR STRONG
+
+#Solution Code for 4-Digit MPIN for 20 test cases
+
 def check_weak(mpin, reason):
     vec = [int(digit) for digit in mpin]
     
@@ -16,7 +20,6 @@ def check_date(dob, mpin_segments):
             return True
     return False
 
-# Testing function that runs multiple test cases
 def test_mpin_strength():
     test_cases = [
         {"mpin": "1234", "dob": "12-03-1999", "spouse_dob": "15-05-1997", "anniversary": "20-10-2018"},
@@ -47,7 +50,6 @@ def test_mpin_strength():
         spouse_dob = case["spouse_dob"]
         anniversary = case["anniversary"]
         
-        # Generate MPIN segments
         mpin_segments = [mpin[i:i+2] for i in range(len(mpin) - 1)]
         
         reason = []
@@ -60,7 +62,6 @@ def test_mpin_strength():
         if check_date(anniversary, mpin_segments):
             reason.append("DEMOGRAPHIC_ANNIVERSARY")
         
-        # Output strength and demographic information
         if reason:
             print(f"MPIN: {mpin} - STRENGTH : WEAK - {', '.join(reason)}")
         else:
@@ -68,9 +69,9 @@ def test_mpin_strength():
         print(f"DOB: {dob}, Spouse DOB: {spouse_dob}, Anniversary: {anniversary}")
         print("-" * 60)
 
-# Run the test function
 test_mpin_strength()
 
+#Solution Code for 6-Digit MPIN for 20 test cases
 
 def check_weak_six_digit(mpin, reason):
     vec = [int(digit) for digit in mpin]
@@ -126,7 +127,6 @@ def test_mpin_strength():
         spouse_dob = case["spouse_dob"]
         anniversary = case["anniversary"]
         
-        # Generate MPIN segments
         mpin_segments = [mpin[i:i+2] for i in range(len(mpin) - 1)]
         
         reason = []
@@ -139,7 +139,6 @@ def test_mpin_strength():
         if check_date(anniversary, mpin_segments):
             reason.append("DEMOGRAPHIC_ANNIVERSARY")
         
-        # Output strength and demographic information
         if reason:
             print(f"MPIN: {mpin} - STRENGTH : WEAK - {', '.join(reason)}")
         else:
@@ -147,9 +146,9 @@ def test_mpin_strength():
         print(f"DOB: {dob}, Spouse DOB: {spouse_dob}, Anniversary: {anniversary}")
         print("-" * 60)
 
-# Run the test function
 test_mpin_strength()
 
+#MPIN DETECTION CODE FOR CUSTOM INPUT
 
 def check_weak_six_digit(mpin, reason):
     vec = [int(digit) for digit in mpin]
